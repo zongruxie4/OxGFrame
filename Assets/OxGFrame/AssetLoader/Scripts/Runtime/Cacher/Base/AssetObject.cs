@@ -118,7 +118,7 @@ namespace OxGFrame.AssetLoader.Cacher
 
         public bool IsSceneOperationHandle()
         {
-            return typeof(SceneHandle).IsInstanceOfType(this.operationHandle);
+            return typeof(YooAsset.SceneHandle).IsInstanceOfType(this.operationHandle);
         }
 
         public bool IsSceneOperationHandleValid()
@@ -171,20 +171,20 @@ namespace OxGFrame.AssetLoader.Cacher
         {
             if (!this.IsSceneOperationHandleValid())
                 return new Scene();
-            return this.GetOperationHandle<SceneHandle>().SceneObject;
+            return this.GetOperationHandle<YooAsset.SceneHandle>().SceneObject;
         }
 
         public bool UnsuspendScene()
         {
             if (this.IsSceneOperationHandleValid())
-                return this.GetOperationHandle<SceneHandle>().UnSuspend();
+                return this.GetOperationHandle<YooAsset.SceneHandle>().UnSuspend();
             return false;
         }
 
         public void UnloadScene()
         {
             if (this.IsSceneOperationHandleValid())
-                this.GetOperationHandle<SceneHandle>().UnloadAsync();
+                this.GetOperationHandle<YooAsset.SceneHandle>().UnloadAsync();
         }
         #endregion
 
